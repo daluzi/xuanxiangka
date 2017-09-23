@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>选项卡</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="./index.css">
+</head>
+<body>
+	<div id="content">
+		<div id="lift_nav">
+			<ul id="tab">
+				<li>js</li>
+				<li>html</li>
+				<li>css</li>
+				<li>asd</li>
+			</ul>
+		</div>
+		<div id="hide_content">
+			<div id="slide_cont">
+				<div class="hide_div">
+					<div class="incontent">js</div>
+					<div class="incontent">js</div>
+					<div class="incontent">js</div>
+					<div class="incontent">js</div>
+					<div class="incontent">js</div>
+					<div class="incontent">js</div>
+				</div>
+				<div class="hide_div">
+					<div class="incontent">html</div>
+					<div class="incontent">html</div>
+					<div class="incontent">html</div>
+					<div class="incontent">html</div>
+					<div class="incontent">html</div>
+					<div class="incontent">html</div>
+				</div>
+				<div class="hide_div">
+					<div class="incontent">css</div>
+					<div class="incontent">css</div>
+					<div class="incontent">css</div>
+					<div class="incontent">css</div>
+					<div class="incontent">css</div>
+					<div class="incontent">css</div>
+				</div>
+				<div class="hide_div">
+					<div class="incontent">asd</div>
+					<div class="incontent">asd</div>
+					<div class="incontent">asd</div>
+					<div class="incontent">asd</div>
+					<div class="incontent">asd</div>
+					<div class="incontent">asd</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var tab = document.getElementById('tab');
+		var tab_li = tab.getElementsByTagName('li');
+		var slide = document.getElementById("slide_cont");
+		var len = tab_li.length;
+		for(i = 0;i < len;i++){
+			tab_li[i].index = i;
+			tab_li[i].onclick = function(){
+				slide.style.top = this.index * (-400) + "px";
+				slide.style.transition = "top 1s";
+			}
+		}
+	</script>
+</body>
+</html>
